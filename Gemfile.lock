@@ -1,0 +1,14 @@
+PATH
+  remote: .
+  specs:
+    conference (0.0.1.beta)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  conference!
