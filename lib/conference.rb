@@ -1,2 +1,1 @@
-module Conference
-end
+require 'conference-core'

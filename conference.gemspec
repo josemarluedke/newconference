@@ -12,4 +12,6 @@ Gem::Specification.new do |s|
   s.files                  = Dir['README.md', 'MIT-LICENSE', 'lib/**/*']
   s.require_path           = 'lib'
   s.required_ruby_version  = '>= 1.9.3'
+
+  s.add_dependency 'conference-core', version
 end
