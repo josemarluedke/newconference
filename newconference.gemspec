@@ -14,5 +14,4 @@ Gem::Specification.new do |s|
   s.required_ruby_version  = '>= 1.9.3'
 
   s.add_dependency 'newconference-core', version
-  s.add_development_dependency 'rspec-rails'
 end
