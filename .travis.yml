@@ -7,7 +7,7 @@ before_script:
   - "psql -c 'create database dummy_test;' -U postgres"
   - "cd core; bundle exec rake app:railties:install:migrations app:db:migrate app:db:test:load; cd ../"
 
-script: "bundle exec rspec spec"
+script: "bundle exec rake"
 
 notifications:
   email:
