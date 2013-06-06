@@ -5,5 +5,9 @@ module Conference
     describe 'validations' do
       it { should validate_presence_of :name }
     end
+
+    describe 'associations' do
+      it { should have_many :keynotes }
+    end
   end
 end
