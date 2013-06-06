@@ -3,7 +3,7 @@ development:
   encoding: unicode
   database: dummy_development
   pool: 5
-  #username: postgres
+  username: postgres
   #password:
   host: localhost
 
@@ -12,7 +12,7 @@ test:
   encoding: unicode
   database: dummy_test
   pool: 5
-  #username: postgres
+  username: postgres
   #password:
   min_messages: WARNING
   host: localhost

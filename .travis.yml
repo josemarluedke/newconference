@@ -1,0 +1,15 @@
+rvm:
+  - 2.0.0
+  - 1.9.3
+
+before_script:
+  - "cp core/spec/dummy/config/database.sample.yml core/spec/dummy/config/database.yml"
+  - "psql -c 'create database dummy_test;' -U postgres"
+  - "cd core; bundle exec rake app:railties:install:migrations app:db:migrate app:db:test:load; cd ../"
+
+script: "bundle exec rspec spec"
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always
