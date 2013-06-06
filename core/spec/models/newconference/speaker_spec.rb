@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Conference
+module Newconference
   describe Speaker do
     describe 'validations' do
       it { should validate_presence_of :name }

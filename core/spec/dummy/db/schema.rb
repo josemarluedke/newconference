@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130606203606) do
+ActiveRecord::Schema.define(version: 20130606214340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,28 @@ ActiveRecord::Schema.define(version: 20130606203606) do
   add_index "conference_keynotes", ["speaker_id"], name: "index_conference_keynotes_on_speaker_id", using: :btree
 
   create_table "conference_speakers", force: true do |t|
+    t.string   "name"
+    t.text     "bio"
+    t.string   "avatar"
+    t.string   "github_url"
+    t.string   "twitter_url"
+    t.string   "other_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "newconference_keynotes", force: true do |t|
+    t.integer  "speaker_id",  null: false
+    t.string   "title",       null: false
+    t.text     "description"
+    t.boolean  "featured"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "newconference_keynotes", ["speaker_id"], name: "index_newconference_keynotes_on_speaker_id", using: :btree
+
+  create_table "newconference_speakers", force: true do |t|
     t.string   "name"
     t.text     "bio"
     t.string   "avatar"

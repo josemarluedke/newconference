@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    conference (0.0.1.beta)
-      conference-core (= 0.0.1.beta)
-    conference-core (0.0.1.beta)
+    newconference (0.0.1.beta)
+      newconference-core (= 0.0.1.beta)
+    newconference-core (0.0.1.beta)
       foreigner
       pg
       rails (~> 4.0.0.rc1)
@@ -102,5 +102,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  conference!
+  newconference!
   rspec-rails

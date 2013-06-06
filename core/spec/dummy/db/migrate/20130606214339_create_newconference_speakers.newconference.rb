@@ -1,6 +1,7 @@
-class CreateConferenceSpeakers < ActiveRecord::Migration
+# This migration comes from newconference (originally 20130604223627)
+class CreateNewconferenceSpeakers < ActiveRecord::Migration
   def change
-    create_table :conference_speakers do |t|
+    create_table :newconference_speakers do |t|
       t.string :name
       t.text :bio
       t.string :avatar

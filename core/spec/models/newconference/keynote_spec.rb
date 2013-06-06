@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Conference
+module Newconference
   describe Keynote do
     describe 'validates' do
       it { should validate_presence_of :title }

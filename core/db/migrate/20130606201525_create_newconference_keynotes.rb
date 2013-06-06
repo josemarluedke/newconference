@@ -1,7 +1,6 @@
-# This migration comes from conference (originally 20130606201525)
-class CreateConferenceKeynotes < ActiveRecord::Migration
+class CreateNewconferenceKeynotes < ActiveRecord::Migration
   def change
-    create_table :conference_keynotes do |t|
+    create_table :newconference_keynotes do |t|
       t.references :speaker, index: true, null: false
       t.string :title, null: false
       t.text :description

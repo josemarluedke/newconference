@@ -1,13 +1,13 @@
 version = File.read(File.expand_path('../../VERSION',__FILE__)).strip
 
 Gem::Specification.new do |s|
-  s.name        = 'conference-core'
+  s.name        = 'newconference-core'
   s.version     = version
   s.authors     = ['Josemar Davi Luedke']
   s.email       = ['josemarluedke@gmail.com']
-  s.homepage    = 'http://github.com/josemarluedke/conference'
-  s.summary     = 'The bare bones necessary for Conference.'
-  s.description = 'The bare bones necessary for Conference.'
+  s.homepage    = 'http://github.com/josemarluedke/newconference'
+  s.summary     = 'The bare bones necessary for Newconference.'
+  s.description = 'The bare bones necessary for Newconference.'
 
   s.files       = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE']
   s.require_path = 'lib'

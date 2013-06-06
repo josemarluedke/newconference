@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    conference-core (0.0.1.beta)
+    newconference-core (0.0.1.beta)
       foreigner
       pg
       rails (~> 4.0.0.rc1)
@@ -103,7 +103,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  conference-core!
   machinist
+  newconference-core!
   rspec-rails
   shoulda-matchers

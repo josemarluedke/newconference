@@ -1,1 +1,1 @@
-require 'conference-core'
+require 'newconference-core'
