@@ -3,4 +3,8 @@ rvm:
   - 1.9.3
 
 before_script:
-  - "cp core/spec/dummy/config/database.sample.yml core/spec/dummy/config/database.ymlcript: "bundle exec rake"
+  - "cp core/spec/dummy/config/database.sample.yml core/spec/dummy/config/database.yml"
+  - "psql -c 'create database dummy_test;' -U postgres"
+  - "cd core; bundle exec rake app:railties:install:migrations app:db:migrate app:db:test:load; cd ../"
+
+script: "bundle exec rake"
