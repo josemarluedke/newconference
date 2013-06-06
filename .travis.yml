@@ -8,8 +8,3 @@ before_script:
   - "cd core; bundle exec rake app:railties:install:migrations app:db:migrate app:db:test:load; cd ../"
 
 script: "bundle exec rake"
-
-notifications:
-  email:
-    on_success: never
-    on_failure: always
