@@ -9,6 +9,7 @@ module Newconference
 
     describe 'associations' do
       it { should belong_to :speaker }
+      it { should have_many :schedules }
     end
   end
 end
