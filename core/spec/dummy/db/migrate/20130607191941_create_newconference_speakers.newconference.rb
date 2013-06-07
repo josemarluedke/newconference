@@ -8,6 +8,7 @@ class CreateNewconferenceSpeakers < ActiveRecord::Migration
       t.string :github_url
       t.string :twitter_url
       t.string :other_url
+      t.boolean :featured, default: false
 
       t.timestamps
     end
