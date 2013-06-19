@@ -18,3 +18,9 @@ end
 Newconference::Room.blueprint do
   name { "Some name #{sn}" }
 end
+
+Newconference::Sponsor.blueprint do
+  name { "Some name #{sn}" }
+  kind { 'organization' }
+  logo { File.open("#{Newconference::Core::Engine.root}/spec/fixtures/logo.png") }
+end
