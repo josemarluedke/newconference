@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.files       = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE']
   s.require_path = 'lib'
 
-  s.add_dependency 'rails', '~> 4.0.0.rc1'
+  s.add_dependency 'rails', '~> 4.0.0.rc2'
   s.add_dependency 'pg'
   s.add_dependency 'foreigner'
   s.add_dependency 'carrierwave', '~> 0.8.0'
