@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'foreigner'
   s.add_dependency 'carrierwave', '~> 0.8.0'
   s.add_dependency 'rmagick'
+  s.add_dependency 'fog'
 
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'shoulda-matchers'
