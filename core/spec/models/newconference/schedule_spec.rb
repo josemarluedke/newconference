@@ -30,5 +30,17 @@ module Newconference
 
       it { expect(Schedule.days).to have(2).days }
     end
+
+    describe '.hours' do
+      before do
+        Schedule.make! starts_at: '2013-10-19 08:00:00'
+        Schedule.make! starts_at: '2013-10-19 08:00:00'
+        Schedule.make! starts_at: '2013-10-20 08:00:00'
+        Schedule.make! starts_at: '2013-10-19 09:00:00'
+      end
+
+      it { expect(Schedule.hours('2013-10-19')).to have(2).differet_hours }
+      it { expect(Schedule.hours('2013-10-20')).to have(1).differet_hours }
+    end
   end
 end

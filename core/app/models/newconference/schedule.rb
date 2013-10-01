@@ -8,5 +8,9 @@ module Newconference
     def self.days
       select("DISTINCT starts_at::date").map(&:starts_at)
     end
+
+    def self.hours(day)
+      select("DISTINCT starts_at::time").where('starts_at::date = ?', day).map(&:starts_at)
+    end
   end
 end
