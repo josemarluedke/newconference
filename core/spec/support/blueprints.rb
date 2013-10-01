@@ -10,6 +10,7 @@ Newconference::Keynote.blueprint do
 end
 
 Newconference::Schedule.blueprint do
+  title { "Something" }
   room { Newconference::Room.make! }
   starts_at { Time.now }
   ends_at { Time.now + 1.hour }

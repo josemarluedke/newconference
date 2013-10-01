@@ -12,7 +12,7 @@ module Newconference
       end
 
       context 'when does not have a keynote' do
-        subject { Schedule.make keynote: nil }
+        subject { Schedule.make keynote: nil, title: nil }
         it { should validate_presence_of :title }
       end
     end
@@ -20,6 +20,15 @@ module Newconference
     describe 'associations' do
       it { should belong_to :room }
       it { should belong_to :keynote }
+    end
+
+    describe '.days' do
+      before do
+        2.times { Schedule.make! starts_at: Time.now }
+        Schedule.make! starts_at: Time.now - 1.day
+      end
+
+      it { expect(Schedule.days).to have(2).days }
     end
   end
 end
