@@ -6,12 +6,16 @@ module Newconference
     validates :title, presence: true, unless: 'keynote_id.present?'
     scope :by_day, -> (day) { where('starts_at::date = ?', day) }
 
-    def self.days
+    def self.all_days
       select("DISTINCT starts_at::date").map(&:starts_at)
     end
 
-    def self.hours(day)
-      select("DISTINCT starts_at::time").where('starts_at::date = ?', day).map(&:starts_at)
+    def self.by_date(date)
+      where("starts_at::date = ?", date).select("starts_at as starts_at").group("starts_at").order("starts_at::time")
+    end
+
+    def self.by_hour(hour)
+      where(starts_at: hour).order(:starts_at)
     end
   end
 end
