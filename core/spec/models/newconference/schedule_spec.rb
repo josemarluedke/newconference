@@ -33,10 +33,11 @@ module Newconference
 
     describe '.by_hour' do
       before do
-        Schedule.make! starts_at: DateTime.now.to_s.to_datetime
-        Schedule.make! starts_at: DateTime.now.to_s.to_datetime
-        Schedule.make! starts_at: DateTime.now.to_s.to_datetime+1.day
-        Schedule.make! starts_at: DateTime.now.to_s.to_datetime+2.day
+        now = DateTime.now.to_s.to_datetime
+        Schedule.make! starts_at: now
+        Schedule.make! starts_at: now
+        Schedule.make! starts_at: now+1.day
+        Schedule.make! starts_at: now+2.day
       end
 
       it { expect(Schedule.by_hour(DateTime.now.to_s.to_datetime)).to have(2).items }
@@ -44,16 +45,16 @@ module Newconference
       it { expect(Schedule.by_hour(DateTime.now.to_s.to_datetime+2.day)).to have(1).items }
     end
 
-    describe '.by_date' do
+    describe '.all_days_by_date' do
       before do
         @s1 = Schedule.make! starts_at: DateTime.now.to_s.to_datetime
         @s2 = Schedule.make! starts_at: DateTime.now.to_s.to_datetime+1.day
         @s3 = Schedule.make! starts_at: DateTime.now.to_s.to_datetime+2.day
       end
 
-      it { expect(Schedule.by_date(DateTime.now.to_date).map(&:starts_at)).to include @s1.starts_at }
-      it { expect(Schedule.by_date(DateTime.now.to_date+1.day).map(&:starts_at)).to include @s2.starts_at }
-      it { expect(Schedule.by_date(DateTime.now.to_date+2.day).map(&:starts_at)).to include @s3.starts_at }
+      it { expect(Schedule.all_days_by_date(DateTime.now.to_s.to_datetime)).to include @s1.starts_at }
+      it { expect(Schedule.all_days_by_date(DateTime.now.to_s.to_datetime+1.day)).to include @s2.starts_at }
+      it { expect(Schedule.all_days_by_date(DateTime.now.to_s.to_datetime+2.day)).to include @s3.starts_at }
     end
   end
 end
