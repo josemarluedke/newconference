@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.authors     = ['Josemar Davi Luedke']
   s.email       = ['josemarluedke@gmail.com']
   s.homepage    = 'http://github.com/josemarluedke/newconference'
-  s.summary     = 'The bare bones necessary for Newconference.'
-  s.description = 'The bare bones necessary for Newconference.'
+  s.summary     = 'Newconference helps you create a website for you conference.'
+  s.description = 'This is the core for newconference gem. Newconference helps you create a website for you conference.'
 
   s.files       = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE']
   s.require_path = 'lib'
